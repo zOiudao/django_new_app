@@ -1,0 +1,6 @@
+.pos {
+    width: 400px;
+    position: block;
+    z-index: 1000;
+    margin-top: 30%;
+}

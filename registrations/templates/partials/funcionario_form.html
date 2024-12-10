@@ -1,11 +1,11 @@
 {% extends "base.html" %} 
-{% load custom_filters %}
+{% block title %}Cadastro de funcionários{% endblock title %}
 {% block content %}
 
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-      <div class="alert alert-success text-center pos" role="alert">
+      <div class="alert alert-success text-center" role="alert">
         {{message}}
       </div>
     {% endfor %}
@@ -13,13 +13,25 @@
 {% endif %}
 
 <div class="content vh-100 d-flex justify-content-center align-items-center">
-  <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+  <div class="card p-4 shadow" style="width: 100%; max-width: 600px;">
     <h2 class="text-center mb-4">Cadastro</h2>
     <form class="row g-3" method="post">
       {% csrf_token %}
-      <div class="form-group">
-        {{ form.nome|add_placeholder:"Nome da Empresa" }}
-      </div>
+
+        <div class="col-md-6">
+            {{form.nome}}
+        </div>
+        <div class="col-md-6">
+            {{form.sobrenome}}
+        </div>
+
+        <div class="col-md-4">
+            {{form.funcional}}
+        </div>
+        <div class="col-md-8">
+            {{form.empresa}}
+        </div>
+
       <div class="col-12 mt-3">
         <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
       </div>
