@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from registrations import forms
+from registrations import forms, models
 
 # Create your views here.
 def index(request):
@@ -15,7 +15,8 @@ def add_empresa(request):
             return redirect('empresa')
     else:
         form = forms.EmpresaForm()
-    return render(request, 'partials/empresa_form.html', {'form': form})
+        exibir_empresas = models.Empresa.objects.all()
+    return render(request, 'partials/empresa_form.html', {'form': form, "exibir_empresas": exibir_empresas})
 
 
 def add_funcionario(request):
