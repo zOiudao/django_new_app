@@ -1,6 +1,12 @@
-<h1>Add a New Book</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <!-- Renderiza o form automaticamente como parágrafos -->
-  <button type="submit">Save</button>
-</form>
+{% extends "base.html" %} {% block content %}
+<div class="content d-flex justify-content-center">
+  <form class="row g-3" method="post">
+    {% csrf_token %}
+    <div class="col-md-12">{{ form.nome }}</div>
+
+    <div class="col-12 w-100">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </form>
+</div>
+{% endblock content %}
