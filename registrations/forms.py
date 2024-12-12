@@ -1,5 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+
 from . import models
 
 
@@ -42,5 +45,27 @@ class FuncionarioForm(forms.ModelForm):
             field.label = "" 
 
 
-class RegisterForm(UserCreationForm):
-    ...
+class RegisterUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = (
+            'username', 'password',
+        )
+        widgets = {
+            'username': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'Nome de usuário', 'type': 'text', 'name': 'login_user'}
+            ),
+            'password': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'Senha', 'type': 'text', 'name': 'login_pass'}
+            ),
+        }
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        if User.objects.filter(email=email).exists():
+            self.add_error(
+                'email',
+                ValidationError('Este email já está cadastrado!', code='invalid')
+            )
+            return email

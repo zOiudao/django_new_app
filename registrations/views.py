@@ -47,7 +47,6 @@ def add_chave(request):
 
 def login_view(request):
     form = AuthenticationForm(request)
-
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -58,4 +57,4 @@ def login_view(request):
         else:
             messages.error(request, 'Login invalido')
 
-    return render(request, "partials/login.html")
+    return render(request, "partials/login.html", {'form': form})

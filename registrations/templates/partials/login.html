@@ -3,10 +3,8 @@
 
 <div class="container">
 
-    {{user}}
-
     <div class="row justify-content-center vh-100">
-        <div class="col-md-4 align-self-center">
+        {% comment %} <div class="col-md-4 align-self-center">
             <form action="{% url "login_view" %}" method="post">
                 {% csrf_token %}
 
@@ -25,8 +23,31 @@
                 </div>
 
             </form>
-        </div>
+        </div> {% endcomment %}
 
+
+        <div class="col-md-4 align-self-center">
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="input-group mb-3">
+                    {% comment %} <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span> {% endcomment %}
+
+                    {{form.as_p}}
+                    {% comment %} <input type="text" class="form-control" name="login_user" placeholder="Usuário" aria-label="username" aria-describedby="basic-addon1"> {% endcomment %}
+                </div>
+
+                {% comment %} <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    <input type="number" class="form-control" name="login_pass" placeholder="Senha" aria-label="password" aria-describedby="basic-addon1">
+                </div> {% endcomment %}
+
+                <div class="input-group mb-3">
+                    <button type="submit" class="btn btn-outline-dark w-100">Logar</button>
+                </div>
+
+            </form>
+        </div>
     </div>
 
 </div>
