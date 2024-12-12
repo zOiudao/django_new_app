@@ -21,6 +21,8 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name='index'),
-    path("empresa", views.add_empresa, name='empresa'),
-    path("funcionario", views.add_funcionario, name='funcionario'),
+    path("empresa/", views.add_empresa, name='empresa'),
+    path("funcionario/", views.add_funcionario, name='funcionario'),
+    path('add_chave/', views.add_chave, name='add_chave'),
+    path('login/', views.login_view, name='login_view'),
 ]

@@ -10,3 +10,7 @@ class EmpresaAdmin(admin.ModelAdmin):
 @admin.register(models.Funcionario)
 class FuncionarioAdmin(admin.ModelAdmin):
     ...
+
+@admin.register(models.Chave)
+class ChaveAdmin(admin.ModelAdmin):
+    ...

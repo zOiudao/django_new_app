@@ -10,32 +10,57 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <title>{% block title %}{% endblock title %}</title>
   </head>
-    <body>
-      
-      {% comment %} navbar {% endcomment %}
+  <body>
+    {% comment %} navbar {% endcomment %}
 
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            {% comment %} <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"> {% endcomment %}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/empresa">Empresa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/funcionario">Funcionario</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          {% comment %}
+          <img
+            src="/docs/5.0/assets/brand/bootstrap-logo.svg"
+            alt=""
+            width="30"
+            height="24"
+          />
+          {% endcomment %}
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/empresa">Empresa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/funcionario">Funcionario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/add_chave">Chave</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-
+      </div>
+    </nav>
+  </body>
+</html>

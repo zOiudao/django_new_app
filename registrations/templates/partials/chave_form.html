@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <div class="row justify-content-center vh-100">
+        <div class="col-md-4 align-self-center">
+            <form action="{% url "add_chave" %}" method="post">
+                {% csrf_token %}
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
+                    <input type="text" class="form-control" name="key_name" placeholder="Nome da chave" aria-label="keyname" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-list-ol"></i></span>
+                    <input type="number" class="form-control" name="key_number" placeholder="Numero da chave" aria-label="keynumber" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <button type="submit" class="btn btn-outline-dark w-100">Cadastrar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
